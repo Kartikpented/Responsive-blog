@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,9 +27,7 @@
                 <input class="form-input" type="text" name="query" placeholder="Article Search">
                 <button class="btn">Search</button>
             </form>
-
         </div>
-
     </nav>
     <div class="max-width-1 m-auto">
         <hr>
@@ -41,16 +38,16 @@
             <div class="contact-form">
                 <form>
                 <div class="form-box">
-                    <input type="text" placeholder="Enter Your Name">
+                    <input type="text" placeholder="Enter Your Name" required>
                 </div>
                 <div class="form-box">
-                    <input type="text" placeholder="Enter Your Phone Number">
+                    <input type="number" placeholder="Enter Your Phone Number" required>
                 </div>
                 <div class="form-box">
-                    <input type="text" placeholder="Enter Your Email Id">
+                    <input type="email" placeholder="Enter Your Email Id" required>
                 </div>
                 <div class="form-box">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="How can we help you?"></textarea>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="How can we help you?" required></textarea>
                 </div>
                 <div class="form-box">
                     <button class="btn">Submit</button>
@@ -59,9 +56,29 @@
             </form>
             </div>
         </div>
+    </div> 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click',function() {
+            e.preventDefault()
+            var name = document.getElementById('name').value;
+            var Phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var body = 'name: '+name + '<br/> email: ' + email + '<br/> subject: ' +subject + '<br/> message: '+ message;
 
-    </div>
-    
+
+            Email.send({
+    SecureToken : "5be44d8c-e95c-47ce-abc4-9bb7b798adc1",
+    To : 'kartikpented29@gmail.com',
+    From : "k40275147@gmail.com",
+    Subject : "Feel Free to Contact Us",
+    Body : "body"
+}).then(
+  message => alert(message)
+);
+        })
+    </script>
 </body>
-
 </html>
